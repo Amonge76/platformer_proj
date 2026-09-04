@@ -4,23 +4,22 @@ using UnityEngine.InputSystem;
 
 public class PlayersInputMng : MonoBehaviour
 {
-    public static event Action<Vector2> _onMoveCallBack;
-    public static event Action<Vector2> _onLookCallBack;
-    public static event Action _onDance;
-    public static event Action _onJump;
-
-    public static event Action<bool> _onShoot;
-
+    private EventBus _inet;
+    public void Init(EventBus totz)
+    {
+       _inet = totz; 
+    }
+        
     public void OnMovePressed(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            _onMoveCallBack?.Invoke(context.ReadValue<Vector2>());
+            _inet.TriggerMove(context.ReadValue<Vector2>());
         }
         else
         {
             var zero = new Vector2 (0,0);
-            _onMoveCallBack?.Invoke(zero);
+            _inet.TriggerMove(zero);
         }
     }
 
@@ -30,12 +29,11 @@ public class PlayersInputMng : MonoBehaviour
         if (lookinput.sqrMagnitude >= 3)
         {
            // Debug.Log(lookinput);
-            _onLookCallBack?.Invoke(lookinput);
+           _inet.TriggerLook(lookinput);
         }
         else
         {
-            Vector3 zero = new Vector2(0,0);
-            _onLookCallBack?.Invoke(zero);
+             _inet.TriggerLook(Vector2.zero);
         }
     }
 
@@ -43,7 +41,7 @@ public class PlayersInputMng : MonoBehaviour
     {
         if (context.performed)
         {
-            _onJump?.Invoke();
+            _inet.TriggerJump();
         }
     }
 
@@ -51,20 +49,10 @@ public class PlayersInputMng : MonoBehaviour
     {
         if (context.performed)
         {
-            _onDance?.Invoke();
+            _inet.TriggerDance();
         }
     }
 
 
-    public void OnShoot(InputAction.CallbackContext context)
-    {
-        if(context.started)
-        {
-            _onShoot?.Invoke(true);
-        }
-        if(context.canceled)
-        {
-            _onShoot?.Invoke(false);
-        }
-    }
+  
 }

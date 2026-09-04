@@ -5,8 +5,7 @@ using Vector3 = UnityEngine.Vector3;
 
 public class playerControler : MonoBehaviour
 {
-    [SerializeField] private PlayerCameraController _cameraController;
-    [SerializeField] private PlayerAttackController _attackController;
+  
   [SerializeField] private float _walkspeed;
   [SerializeField] private Rigidbody _playerRB;
   [SerializeField] private Animator _playerAnimator;
@@ -60,7 +59,7 @@ public class playerControler : MonoBehaviour
     private void OnLookPressed(Vector2 look)
     {
         _targetLookY = look.x;
-        _cameraController.RotateCamera(look);
+       // _cameraController.RotateCamera(look);
         
     }
 
@@ -138,7 +137,7 @@ public class playerControler : MonoBehaviour
 
     private void OnShoot(bool t)
 {
-    _attackController.OnShootPerformed(t);
+   // _attackController.OnShootPerformed(t);
     Debug.Log($"Attack {t}");
 }
 }
