@@ -1,8 +1,6 @@
-using JetBrains.Annotations;
-using Unity.VisualScripting;
-using UnityEditor.Rendering;
+
 using UnityEngine;
-using UnityEngine.Purchasing;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -22,8 +20,8 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this);
         _inputMng.Init(_inet);
 
-
-
-
+        SceneManager.LoadScene(SceneList._mainScene);
     }
+
+
 }

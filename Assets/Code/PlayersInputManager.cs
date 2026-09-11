@@ -53,6 +53,30 @@ public class PlayersInputMng : MonoBehaviour
         }
     }
 
+    public void OnSprint(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            _inet.TriggerSprint(true);
+        }
+        if (context.canceled)
+        {
+            _inet.TriggerSprint(false);
+        }
+    }
+
+     public void OnAttack(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            _inet.TriggerAttack(true);
+        }
+        if (context.canceled)
+        {
+            _inet.TriggerAttack(false);
+        }
+    }
+
 
   
 }

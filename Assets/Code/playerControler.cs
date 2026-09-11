@@ -31,21 +31,21 @@ public class playerControler : MonoBehaviour
 
     private void OnEnable()
     {
-        PlayersInputMng._onMoveCallBack += OnMovePressed;
-        PlayersInputMng._onLookCallBack += OnLookPressed;
-        PlayersInputMng._onJump += OnJumpPressed;
-        PlayersInputMng._onDance += OnDancePressed;
-        PlayersInputMng._onShoot += OnShoot;
+      //  PlayersInputMng._onMoveCallBack += OnMovePressed;
+       // PlayersInputMng._onLookCallBack += OnLookPressed;
+       // PlayersInputMng._onJump += OnJumpPressed;
+       // PlayersInputMng._onDance += OnDancePressed;
+       // PlayersInputMng._onShoot += OnShoot;
 
     }
 
      private void OnDisable()
     {
-        PlayersInputMng._onMoveCallBack -= OnMovePressed;
-        PlayersInputMng._onLookCallBack -= OnLookPressed;
-        PlayersInputMng._onJump -= OnJumpPressed;
-        PlayersInputMng._onDance -= OnDancePressed;
-        PlayersInputMng._onShoot -= OnShoot;
+       // PlayersInputMng._onMoveCallBack -= OnMovePressed;
+       // PlayersInputMng._onLookCallBack -= OnLookPressed;
+       // PlayersInputMng._onJump -= OnJumpPressed;
+       // PlayersInputMng._onDance -= OnDancePressed;
+       // PlayersInputMng._onShoot -= OnShoot;
     }
 
    private void OnMovePressed(Vector2 moveInput)
