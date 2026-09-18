@@ -1,6 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BaseButton : MonoBehaviour
 {
@@ -12,15 +13,18 @@ public class BaseButton : MonoBehaviour
     private void OnEnable()
     {
         _eventBus = GameManager.Instance.Inet;
+        _button.onClick.AddListener(OnClick);
+        
     }
 
     private void OnDisable()
     {
-        
+         _button.onClick.RemoveListener(OnClick);
     }
 
     private void OnClick()
     {
         _eventBus.TriggerButton(_buttonType);
     }
+   
 }
