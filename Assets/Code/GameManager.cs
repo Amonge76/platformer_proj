@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private EventBus _inet;
     [SerializeField] private PlayersInputMng _inputMng;
     public EventBus Inet => _inet;
-    public static GameManager Instance {get; private set;}
+    public static GameManager Instance {get; private set;} //Я АВТАРІТЕТ
     
     private GameState _gameState = GameState.System;
     public GameState GameState => _gameState;
