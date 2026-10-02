@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: c442ab8bb222942d9a6fb185a18cfcdf
+labels:
+- Infinite
+- Cave
+- Torch
+- Animated
+timeCreated: 1432022307
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 37158
+  packageName: Cave Exploration Starter Kit
+  packageVersion: 1.7
+  assetPath: Assets/CaveExploration/Prefabs/end_collectible.prefab
+  uploadId: 291710

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f7c46e9812a23468cbf87ea86458cb2d
+timeCreated: 1431433441
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 37158
+  packageName: Cave Exploration Starter Kit
+  packageVersion: 1.7
+  assetPath: Assets/CaveExploration/Animations/enemy_3/idle.anim
+  uploadId: 291710

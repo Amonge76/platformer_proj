@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 93f8c18c0173946718154f6704f13221
+timeCreated: 1431343678
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 37158
+  packageName: Cave Exploration Starter Kit
+  packageVersion: 1.7
+  assetPath: Assets/CaveExploration/Animations/enemy_2/enemy_2.controller
+  uploadId: 291710

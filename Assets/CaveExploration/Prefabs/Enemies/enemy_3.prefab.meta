@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: c9b234ee6586441868918befd3dd56ab
+labels:
+- Complete
+- CompleteGame
+- Tile
+- Cave
+timeCreated: 1431434264
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 37158
+  packageName: Cave Exploration Starter Kit
+  packageVersion: 1.7
+  assetPath: Assets/CaveExploration/Prefabs/Enemies/enemy_3.prefab
+  uploadId: 291710

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ec443bce14190443ba895b49c76be7a6
+timeCreated: 1431343678
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 37158
+  packageName: Cave Exploration Starter Kit
+  packageVersion: 1.7
+  assetPath: Assets/CaveExploration/Animations/enemy_2/attack.anim
+  uploadId: 291710

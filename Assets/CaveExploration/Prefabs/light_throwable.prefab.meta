@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 01c2ea09db26b4dfaac5a31ddcfb2a6c
+labels:
+- Scripted
+- Light
+- Dark
+- Projectile
+timeCreated: 1431278240
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 37158
+  packageName: Cave Exploration Starter Kit
+  packageVersion: 1.7
+  assetPath: Assets/CaveExploration/Prefabs/light_throwable.prefab
+  uploadId: 291710

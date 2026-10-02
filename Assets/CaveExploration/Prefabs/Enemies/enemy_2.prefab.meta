@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: cf28caae10a0b499a8998566c9c34188
+labels:
+- Scripted
+- Animated
+- Animation
+- Audio
+timeCreated: 1431343741
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 37158
+  packageName: Cave Exploration Starter Kit
+  packageVersion: 1.7
+  assetPath: Assets/CaveExploration/Prefabs/Enemies/enemy_2.prefab
+  uploadId: 291710

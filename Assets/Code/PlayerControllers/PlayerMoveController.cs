@@ -6,12 +6,10 @@ public class PlayerMoveController : MonoBehaviour
     [SerializeField] private Rigidbody2D _playerRB;
     [SerializeField] private float _jumpForce = 5f;
     [SerializeField] private PlayerAnimationController _playerAnimationController;
-
+    
+    private bool _isGrounded = false;
     private float currentSpeed;
     private Vector2 _currentMoveVector;
-
-    private const string _groundTag = "Ground";
-    private bool _isGrounded = true;
 
 
 
@@ -23,9 +21,8 @@ public class PlayerMoveController : MonoBehaviour
 
     public void OnMovePressed(Vector2 moveInput)
     { 
-        float moveX = moveInput.x; 
-        float moveY = moveInput.y; 
-       _currentMoveVector = transform.right * moveX + transform.up * moveY;
+        float moveX = moveInput.x;
+       _currentMoveVector = transform.right * moveX;
      }
 
      private void Move()
@@ -43,16 +40,21 @@ public class PlayerMoveController : MonoBehaviour
         Vector2 move = _currentMoveVector * _walkspeed * Time.fixedDeltaTime;
 
         _playerAnimationController.UpdateAnimation(currentSpeed);
-        _playerRB.MovePosition(_playerRB.position + move);
+       // _playerRB.MovePosition(_playerRB.position + move);
+       _playerRB.linearVelocity = new Vector2(move.x, _playerRB.linearVelocity.y);
     }
 
-    private void OnJumpPressed()
+    public void OnJumpPressed()
     {
         if (!_isGrounded)
         {
             return;
         }
         _playerRB.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
-        _isGrounded = false;
+    }
+
+    public void SetGrounded(bool grounded)
+    {
+        _isGrounded = grounded;
     }
 }

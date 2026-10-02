@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 9a912502ffb774de886f52780d50b36e
+labels:
+- Cave
+- Exploration
+- Explore
+- Starter
+- StarterKit
+- Template
+timeCreated: 1430993366
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 37158
+  packageName: Cave Exploration Starter Kit
+  packageVersion: 1.7
+  assetPath: Assets/CaveExploration/Prefabs/cell.prefab
+  uploadId: 291710

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 218a7a1654bb54c12bd56685d5af08d8
+timeCreated: 1431932184
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 37158
+  packageName: Cave Exploration Starter Kit
+  packageVersion: 1.7
+  assetPath: Assets/CaveExploration/Animations/player/spawn.anim
+  uploadId: 291710

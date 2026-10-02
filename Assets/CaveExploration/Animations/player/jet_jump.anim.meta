@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e035cecc8f4d54617a7780e35a49b2cb
+timeCreated: 1431332184
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 37158
+  packageName: Cave Exploration Starter Kit
+  packageVersion: 1.7
+  assetPath: Assets/CaveExploration/Animations/player/jet_jump.anim
+  uploadId: 291710

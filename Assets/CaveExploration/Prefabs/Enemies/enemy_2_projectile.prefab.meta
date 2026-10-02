@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: cb92c4a872cab42e9b742a14d6192475
+labels:
+- Enemies
+- FallingDamage
+- Damage
+- Infinite
+timeCreated: 1431355452
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 37158
+  packageName: Cave Exploration Starter Kit
+  packageVersion: 1.7
+  assetPath: Assets/CaveExploration/Prefabs/Enemies/enemy_2_projectile.prefab
+  uploadId: 291710

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 834d7383dd8f3422a944a5dc2a34fa23
+timeCreated: 1432240921
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 37158
+  packageName: Cave Exploration Starter Kit
+  packageVersion: 1.7
+  assetPath: Assets/CaveExploration/Animations/Flame/end_collectible.controller
+  uploadId: 291710
