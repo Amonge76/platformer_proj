@@ -50,7 +50,8 @@ public class PlayerMoveController : MonoBehaviour
         {
             return;
         }
-        _playerRB.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
+        //_playerRB.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
+        _playerRB.linearVelocity = new Vector2(_playerRB.linearVelocity.x, _jumpForce);
     }
 
     public void SetGrounded(bool grounded)

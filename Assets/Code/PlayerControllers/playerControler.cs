@@ -59,20 +59,13 @@ public class playerControler : MonoBehaviour
 
     private void CheckForGround()
     {
-        if(Physics2D.Raycast(_legs.position, Vector2.down, _checkDistance, _groundLayer))
+
+        bool Hit = Physics2D.Raycast(_legs.position, Vector2.down, _checkDistance, _groundLayer);
+        if(Hit != _isGrounded)
         {
-            if(!_isGrounded)
-           {
-              _isGrounded = true;
-           }
+          _isGrounded = Hit;
         }
-        else
-        {
-            if(_isGrounded)
-            {
-                _isGrounded = false;
-            }
-        }
+           
         NotifyGrounded();
     }
 
