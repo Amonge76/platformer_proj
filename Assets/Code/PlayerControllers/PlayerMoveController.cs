@@ -18,6 +18,10 @@ public class PlayerMoveController : MonoBehaviour
         Move();
         
     }
+    private void LateUpdate()
+    {
+        _playerAnimationController.UpdateAnimation(_playerRB.linearVelocity.x, _playerRB.linearVelocity.y);
+    }
 
     public void OnMovePressed(Vector2 moveInput)
     { 
@@ -39,7 +43,7 @@ public class PlayerMoveController : MonoBehaviour
 
         Vector2 move = _currentMoveVector * _walkspeed * Time.fixedDeltaTime;
 
-        _playerAnimationController.UpdateAnimation(currentSpeed);
+        
        // _playerRB.MovePosition(_playerRB.position + move);
        _playerRB.linearVelocity = new Vector2(move.x, _playerRB.linearVelocity.y);
     }
