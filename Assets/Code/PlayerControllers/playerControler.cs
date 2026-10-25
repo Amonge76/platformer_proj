@@ -9,10 +9,12 @@ using Vector2 = UnityEngine.Vector2;
 public class playerControler : MonoBehaviour
 {
     private EventBus _inet;
+    [SerializeField] private PlayerCameraController _cameraController;
     [SerializeField] private PlayerMoveController _playerMoveController;
     [SerializeField] private Transform _legs;
     [SerializeField] private LayerMask _groundLayer;
 
+    private PlayerCameraController _plrCameraController;
     private float _timer = 0f;
     private float _checkDelay = 0.2f;
     private float _checkDistance = 0.2f;
