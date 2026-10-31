@@ -9,28 +9,35 @@ using Vector2 = UnityEngine.Vector2;
 public class playerControler : MonoBehaviour
 {
     private EventBus _inet;
-    [SerializeField] private PlayerCameraController _cameraController;
     [SerializeField] private PlayerMoveController _playerMoveController;
     [SerializeField] private Transform _legs;
     [SerializeField] private LayerMask _groundLayer;
 
-    private PlayerCameraController _plrCameraController;
+    private PlayerCameraController _playerCameraController;
     private float _timer = 0f;
     private float _checkDelay = 0.2f;
     private float _checkDistance = 0.2f;
     private bool _isGrounded = false;
 
-    private void OnEnable()
+    public void Initialize(PlayerCameraController playerCameraController, EventBus bus)
     {
-      _inet = GameManager.Instance.Inet;
-      _inet._onMoveCallBack += OnMovePressed;
+      _inet = bus;
+      _inet. _onMoveCallBack += OnMovePressed;
       _inet._onJump += OnJumpPressed;
+      _playerCameraController = playerCameraController;
     }
 
      private void OnDisable()
     {
       _inet._onMoveCallBack -= OnMovePressed;
       _inet._onJump -= OnJumpPressed;
+    }
+
+    private void Update()
+    {
+      if (_playerCameraController == null)
+      return;
+        _playerCameraController.GetPlayerPosition(transform.position);
     }
 
     private void FixedUpdate()
