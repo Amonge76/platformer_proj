@@ -38958,7 +38958,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a6d53db21704cce949364e0a520475, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCameraController
-  _offset: {x: 0, y: 0, z: -10}
+  _offset: {x: 0.05, y: 0, z: -10}
 --- !u!114 &1426740401
 MonoBehaviour:
   m_ObjectHideFlags: 0

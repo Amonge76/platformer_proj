@@ -5,4 +5,5 @@ public enum ButtonType
     Start,
     Exit,
     MainMunu,
+    Setting,
 }

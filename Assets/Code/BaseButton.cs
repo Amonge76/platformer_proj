@@ -19,6 +19,8 @@ public class BaseButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     [SerializeField] private float _duration = 0.2f;
     [SerializeField] private float _clickDuration = 2f;
     [SerializeField] private Image _image;
+    [SerializeField] private Sprite _clickSprite;
+    [SerializeField] private Sprite _normalSprite;
     private Tween _scaleTween;
     private Sequence _clickSequence;
 
@@ -51,8 +53,9 @@ public class BaseButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         _clickSequence = DOTween.Sequence()
                         .SetUpdate(true)
                         .SetLink(gameObject)
-                        .OnStart(() => {Debug.Log("fixed allllll error");})
-                        .Append(_buttonRect.DORotate(new UnityEngine.Vector3(0,0,-360), _clickDuration, RotateMode.FastBeyond360).SetEase(Ease.InSine))
+                        .Append(_buttonRect.DOScale(0f, _duration))
+                       //.OnStart(() => {Debug.Log("fixed allllll error");})
+                       // .Append(_buttonRect.DORotate(new UnityEngine.Vector3(0,0,-360), _clickDuration, RotateMode.FastBeyond360).SetEase(Ease.InSine))
                         .Join(_image.DOFade(0.2f, _clickDuration))
                         .OnComplete(() => {SendPayload();});
     }
@@ -77,13 +80,25 @@ public class BaseButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     public void OnPointerExit(PointerEventData eventData)
     {
         _scaleTween?.Kill();//kill animation
-
+        //SwapSprite(false);
         _scaleTween = _buttonRect.DOScale(1f, _duration)
                         .SetEase(Ease.InQuad)
                         .SetUpdate(true)
                         .SetLink(gameObject);
                         //plz no no error
 
+    }
+
+    private void SwapSprite(bool IsClicked)
+    {
+        if(IsClicked)
+        {
+            _image.sprite = _clickSprite;
+        }
+        else
+        {
+            _image.sprite = _normalSprite;
+        }
     }
    
 }

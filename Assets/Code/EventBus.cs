@@ -12,6 +12,9 @@ public class EventBus : MonoBehaviour
     public event Action<bool> _onSprint;
     public event Action<bool> _onAttack;
     public event Action<ButtonType> _onButtonClick;
+    public event Action<GameState> _onGameStateChanged;
+    public event Action<GameState> _onGameStateRequest;
+
     public void TriggerMove(Vector2 kostya) 
     {
         _onMoveCallBack?.Invoke(kostya);
@@ -45,6 +48,16 @@ public class EventBus : MonoBehaviour
      public void TriggerButton(ButtonType buttonType)
     {
         _onButtonClick?.Invoke(buttonType);
+    }
+
+    public void RequestGameState(GameState state)
+    {
+        _onGameStateRequest?.Invoke(state);
+    }
+
+    public void NotifyGameState(GameState state)
+    {
+        _onGameStateChanged?.Invoke(state);
     }
 
 }

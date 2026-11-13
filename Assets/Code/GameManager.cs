@@ -1,4 +1,5 @@
 
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private EventBus _inet;
     [SerializeField] private PlayersInputMng _inputMng;
+    [SerializeField] private UIManager _UiMng;
     public EventBus Inet => _inet;
     public static GameManager Instance {get; private set;} //Я АВТАРІТЕТ
     
@@ -24,28 +26,13 @@ public class GameManager : MonoBehaviour
    
         DontDestroyOnLoad(this);
 
+        _UiMng.Init(_inet);
+        
+
         _inputMng.Init(_inet);
-        _inet._onButtonClick += OnUIButton;
+        _inet._onGameStateRequest += OnStateRequest;
 
         OnStateRequest(GameState.MainMenu);
-    }
-
-    private void OnUIButton(ButtonType type)
-    {
-        switch(type)
-        {
-            case ButtonType.Start:
-            OnStateRequest(GameState.Playing);
-            break;
-
-            case ButtonType.MainMunu:
-            OnStateRequest(GameState.Playing);
-            break;
-
-            case ButtonType.Exit:
-            Application.Quit();
-            break;
-        }
     }
 
     private void OnStateRequest(GameState state)
@@ -71,7 +58,7 @@ public class GameManager : MonoBehaviour
             break;
 
         }
-
+        _inet.NotifyGameState(state);
         _gameState = state;
     }
 
