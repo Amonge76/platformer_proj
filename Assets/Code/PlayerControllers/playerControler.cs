@@ -12,6 +12,7 @@ public class playerControler : MonoBehaviour
     [SerializeField] private PlayerMoveController _playerMoveController;
     [SerializeField] private Transform _legs;
     [SerializeField] private LayerMask _groundLayer;
+    [SerializeField] private ClickCollider _checkCollider;
 
     private PlayerCameraController _playerCameraController;
     private float _timer = 0f;
@@ -38,6 +39,11 @@ public class playerControler : MonoBehaviour
       if (_playerCameraController == null)
       return;
         _playerCameraController.GetPlayerPosition(transform.position);
+
+        if(_checkCollider.HasInteractable)
+        {
+          GetInteractable(_checkCollider.CurrentInteractable);
+        }
     }
 
     private void FixedUpdate()
@@ -81,6 +87,11 @@ public class playerControler : MonoBehaviour
     private void NotifyGrounded()
     {
       _playerMoveController.SetGrounded(_isGrounded);
+    }
+
+    private void GetInteractable(Iinteractable interactable)
+    {
+      interactable.Interact(gameObject);
     }
 }
     
