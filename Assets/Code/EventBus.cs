@@ -9,6 +9,8 @@ public class EventBus : MonoBehaviour
     public event Action<Vector2> _onLookCallBack;
     public event Action _onDance;
     public event Action _onJump;
+    public event Action _onPause;
+    public event Action _onInteract;
     public event Action<bool> _onSprint;
     public event Action<bool> _onAttack;
     public event Action<ButtonType> _onButtonClick;
@@ -45,6 +47,7 @@ public class EventBus : MonoBehaviour
         _onSprint?.Invoke(danaya);
     }
 
+
      public void TriggerButton(ButtonType buttonType)
     {
         _onButtonClick?.Invoke(buttonType);
@@ -58,6 +61,16 @@ public class EventBus : MonoBehaviour
     public void NotifyGameState(GameState state)
     {
         _onGameStateChanged?.Invoke(state);
+    }
+
+    public void TriggerInteract()
+    {
+        _onPause?.Invoke();
+    }
+
+    public void TriggerPause()
+    {
+        _onPause?.Invoke();
     }
 
 }

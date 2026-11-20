@@ -9,14 +9,14 @@ public abstract class BaseInteractebles : MonoBehaviour, Iinteractable
 
     public void Interact(GameObject interactor)//; 
     {
-        OnInteract();
+        OnInteract(interactor);
     }
     public bool CanInteract(GameObject interactor)
     {
         return _isInteracting;
     }
 
-    protected virtual void OnInteract()
+    protected virtual void OnInteract(GameObject ineractor)
     {
         Debug.Log($" Interacted with {gameObject.name}");
     }

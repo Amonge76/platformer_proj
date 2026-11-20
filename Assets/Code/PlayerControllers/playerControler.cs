@@ -13,6 +13,7 @@ public class playerControler : MonoBehaviour
     [SerializeField] private Transform _legs;
     [SerializeField] private LayerMask _groundLayer;
     [SerializeField] private ClickCollider _checkCollider;
+    private Iinteractable _currentInteractable;
 
     private PlayerCameraController _playerCameraController;
     private float _timer = 0f;
@@ -26,12 +27,14 @@ public class playerControler : MonoBehaviour
       _inet. _onMoveCallBack += OnMovePressed;
       _inet._onJump += OnJumpPressed;
       _playerCameraController = playerCameraController;
+      _inet._onInteract += TryInteract;
     }
 
      private void OnDisable()
     {
       _inet._onMoveCallBack -= OnMovePressed;
       _inet._onJump -= OnJumpPressed;
+      _inet._onInteract -= TryInteract;
     }
 
     private void Update()
@@ -43,6 +46,10 @@ public class playerControler : MonoBehaviour
         if(_checkCollider.HasInteractable)
         {
           GetInteractable(_checkCollider.CurrentInteractable);
+        }
+        else
+        {
+          GetInteractable(null);
         }
     }
 
@@ -91,8 +98,16 @@ public class playerControler : MonoBehaviour
 
     private void GetInteractable(Iinteractable interactable)
     {
-      interactable.Interact(gameObject);
+      _currentInteractable = interactable;
     }
+
+    private void TryInteract()
+    {
+      _currentInteractable?.Interact(gameObject);
+    }
+
+    
+    
 }
     
 

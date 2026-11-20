@@ -77,6 +77,22 @@ public class PlayersInputMng : MonoBehaviour
         }
     }
 
+    public void TryInteract(InputAction.CallbackContext context)
+    {
+       if (context.started)
+        {
+            _inet.TriggerInteract();
+        } 
+    }
+
+    public void OnPause(InputAction.CallbackContext context)
+    {
+       if (context.started)
+        {
+            _inet.TriggerPause();
+        } 
+    }
+
 
   
 }
